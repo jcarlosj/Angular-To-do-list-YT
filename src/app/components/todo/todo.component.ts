@@ -10,6 +10,7 @@ import { Todo } from './../../models/Todo';
 export class TodoComponent {
   title: String = 'Todo';
   todos: Array<Todo> = [];
+  inputTodo: String = '';
 
   ngOnInit() {
     this.todos = [
@@ -29,5 +30,17 @@ export class TodoComponent {
 
   deleteTodo( id: number ) {
     this.todos = this.todos.filter( ( todo: Todo, index: number ) => index !== id );
+  }
+
+  addTodo() {
+    this.todos = [
+      {
+        content: this.inputTodo,
+        completed: false
+      },
+      ...this.todos
+    ];
+
+    this.inputTodo = '';
   }
 }

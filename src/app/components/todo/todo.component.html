@@ -1,5 +1,17 @@
 <div class="todo-component">
   <h2>{{ title }}</h2>
+  <div class="todos">
+    <form>
+      <input
+        type="text"
+        name="inputTodo"
+        placeholder="Enter your ToDo"
+        class="todo-input"
+        [(ngModel)]="inputTodo"
+      />
+      <button (click)="addTodo()">Add Todo</button>
+    </form>
+  </div>
   <div class="todos" *ngFor="let todo of todos; let i = index;">
     <div class="todo">
       <p class="todo-id">{{ i }}</p>
