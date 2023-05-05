@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 import { Todo } from './../../models/Todo';
 
@@ -11,6 +12,7 @@ export class TodoComponent {
   title: String = 'Todo';
   todos: Array<Todo> = [];
   inputTodo: String = '';
+  faCoffee = faCoffee;
 
   ngOnInit() {
     this.todos = [
