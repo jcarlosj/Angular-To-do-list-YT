@@ -1,9 +1,9 @@
 <div class="todo-component">
   <h2>{{ title }}</h2>
-  <div class="todos">
+  <div class="todos" *ngFor="let todo of todos; let i = index;">
     <div class="todo">
-      <p class="todo-id">0</p>
-      <p class="todo-text">My Task</p>
+      <p class="todo-id">{{ i }}</p>
+      <p class="todo-text">{{ todo.content }}</p>
       <button class="todo-btn-delete">Remove</button>
     </div>
   </div>

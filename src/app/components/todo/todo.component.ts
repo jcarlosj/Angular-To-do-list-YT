@@ -10,4 +10,12 @@ import { Todo } from './../../models/Todo';
 export class TodoComponent {
   title: String = 'Todo';
   todos: Array<Todo> = [];
+
+  ngOnInit() {
+    this.todos = [
+      { content: 'First Task', completed: true },
+      { content: 'Second Task', completed: false },
+      { content: 'Third Task', completed: false }
+    ];
+  }
 }
