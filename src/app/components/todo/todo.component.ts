@@ -16,23 +16,30 @@ export class TodoComponent {
   faPlus = faPlus;
 
   ngOnInit() {
-    this.todos = [
-      { content: 'First Task', completed: true },
-      { content: 'Second Task', completed: false },
-      { content: 'Third Task', completed: false }
-    ];
+    const data = localStorage.getItem( 'todos' );
+
+    this.todos = data === null ? [] : JSON.parse( data );
+    // console.log( this.todos );
+
+    // this.todos = [
+    //   { content: 'First Task', completed: true },
+    //   { content: 'Second Task', completed: false },
+    //   { content: 'Third Task', completed: false }
+    // ];
   }
 
   toggleDone( id: number ) {
-    return this.todos.map( ( todo: Todo, index: number ) => {
+    this.todos.map( ( todo: Todo, index: number ) => {
       if( index == id ) {
         todo.completed = ! todo.completed;
       }
     });
+    localStorage.setItem( 'todos', JSON.stringify( this.todos ) );
   }
 
   deleteTodo( id: number ) {
     this.todos = this.todos.filter( ( todo: Todo, index: number ) => index !== id );
+    localStorage.setItem( 'todos', JSON.stringify( this.todos ) );
   }
 
   addTodo() {
@@ -45,5 +52,6 @@ export class TodoComponent {
     ];
 
     this.inputTodo = '';
+    localStorage.setItem( 'todos', JSON.stringify( this.todos ) );
   }
 }

@@ -9,14 +9,14 @@
         class="todo-input"
         [(ngModel)]="inputTodo"
       />
-      <a
+      <button
         class="btn-add-todo"
-        href="/#"
+        type="submit"
         (click)="addTodo()"
       >
         <fa-icon [icon]="faPlus"></fa-icon>
         <span class="btn-text">Add ToDo</span>
-      </a>
+      </button>
     </form>
   </div>
 
