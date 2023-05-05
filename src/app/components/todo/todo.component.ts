@@ -18,4 +18,12 @@ export class TodoComponent {
       { content: 'Third Task', completed: false }
     ];
   }
+
+  toggleDone( id: number ) {
+    return this.todos.map( ( todo: Todo, index: number ) => {
+      if( index == id ) {
+        todo.completed = ! todo.completed;
+      }
+    });
+  }
 }
