@@ -26,4 +26,8 @@ export class TodoComponent {
       }
     });
   }
+
+  deleteTodo( id: number ) {
+    this.todos = this.todos.filter( ( todo: Todo, index: number ) => index !== id );
+  }
 }
