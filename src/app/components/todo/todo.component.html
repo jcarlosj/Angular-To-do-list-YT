@@ -1,7 +1,6 @@
 <div class="todo-component">
   <h2>{{ title }}</h2>
   <div class="todos">
-    <fa-icon [icon]="faCoffee"></fa-icon>
     <form>
       <input
         type="text"
@@ -10,7 +9,12 @@
         class="todo-input"
         [(ngModel)]="inputTodo"
       />
-      <button (click)="addTodo()">Add Todo</button>
+      <a
+        href="/#"
+        (click)="addTodo()"
+      >
+        <fa-icon [icon]="faPlus"></fa-icon>Add Todo
+      </a>
     </form>
   </div>
   <div class="todos" *ngFor="let todo of todos; let i = index;">
@@ -21,10 +25,13 @@
         (click)="toggleDone( i )"
       >{{ todo.content }}
       </p>
-      <button
+      <a
+        href="/#"
         class="todo-btn-delete"
         (click)="deleteTodo( i )"
-      >Remove</button>
+      >
+        <fa-icon [icon]="faTrash"></fa-icon>Remove
+      </a>
     </div>
   </div>
 </div>
