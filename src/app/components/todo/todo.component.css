@@ -1,10 +1,79 @@
+
+
 .todo {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
+  padding: 0 0.8rem;
+  padding: 0.8rem 1.6rem;
+  border: 1px solid #EEE;
+}
+
+.form-add-todo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin:  1.6rem 0;
 }
 
 .done {
   text-decoration: line-through;
+}
+
+@media (min-width: 567px) {
+  .todos {
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    flex-wrap: wrap;
+    gap: var( --space-todos );
+  }
+  .todo {
+    flex: 1 1 auto;
+  }
+}
+@media (min-width: 567px) {
+  .todo {
+    flex: 1 1 calc( 50% - var( --space-todos ));
+  }
+}
+@media (min-width: 768px) {
+  .todo {
+    flex: 1 1 calc( 33% - var( --space-todos ));
+  }
+}
+@media (min-width: 992px) {
+  .todo {
+    flex: 0 1 calc( 25% - var( --space-todos ));
+  }
+}
+
+.todo:nth-child(even) {
+    background-color: #EEE;
+}
+
+span.btn-text {
+  display: none;
+}
+
+.todo-input {
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.25rem 0 0 0.25rem;
+  border: 1px solid gray;
+}
+
+.todo-content {
+  flex-grow: 1;
+}
+
+.btn-add-todo, .btn-delete-todo {
+  background: chocolate;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.25rem;
+}
+
+.btn-add-todo {
+  border-radius: 0 0.25rem 0.25rem 0;
 }
